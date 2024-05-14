@@ -1,4 +1,4 @@
-const display = document.getElementById('cve')
+const display = document.querySelector('#cve tbody')
 
 async function fetchData() {
     try {
@@ -9,12 +9,21 @@ async function fetchData() {
         display.innerHTML = '';
 
         results.map((item) => {
-            display.innerHTML += `
-                <div>
-                    <h3>${item.title}</h3>
-                    <p>${item.severity}</p>
-                </div>
-            `;
+            
+            const row = document.createElement('tr');
+            const titleCell = document.createElement('td');
+            titleCell.textContent = item.title;
+            row.appendChild(titleCell);
+
+            const severityCell = document.createElement('td');
+            severityCell.textContent = item.severity;
+            row.appendChild(severityCell);
+
+            const platformCell = document.createElement('td');
+            platformCell.textContent = item.platform; 
+            row.appendChild(platformCell);
+
+            display.appendChild(row);
         });
     } catch (error) {
         console.error('Error fetching data:', error);

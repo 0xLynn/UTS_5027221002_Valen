@@ -61,7 +61,7 @@ const getServer = () => {
         },
         'UpdateCVE': (call: grpc.ServerUnaryCall<CVEWithID, Response>, callback: grpc.sendUnaryData<Response>) => {
             const cve = call.request
-            console.log('Server succed get all Data')
+            console.log('Server succeed get all Data')
             cveServerController.updatecve(cve).then((res: Response | undefined) => {
                 callback(null, res)
             })

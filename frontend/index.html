@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(38, 38, 38);
+        }
+        #cve {
+            width: 100%;
+            border-collapse: collapse;
+            color: #333; 
+        }
+        #cve th, #cve td {
+            text-align: center;
+        }
+        #cve th {
+            background-color: rgb(55, 55, 55); 
+            color: #BB86FC;
+            padding: 10px;
+        }
+        #cve td {
+            border: 1px solid #BB86FC;
+            padding: 10px;
+            background-color: rgb(55, 55, 55); 
+            color: #BB86FC;
+        }
+        #cve tr:hover {
+            background-color: #ddd; 
+        }
+    </style>
 </head>
 <body>
-    <div id="cve">
-        <!-- dari main.js -->
-    </div>
+    <table id="cve">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Severity</th>
+                <th>Platform</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <script src="./main.js"></script>
 </body>
 </html>
